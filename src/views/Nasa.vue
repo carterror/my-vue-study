@@ -23,13 +23,13 @@ const start = async () => {
   // await store.dispatch('category/addCategory', {title: new Date(), description: window.navigator.userAgent, gasto: true})
 
 // Create a single supabase client for interacting with your database
-  const supabase = createClient('https://rnjkkkkpedpjhgoniavk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuamtra2twZWRwamhnb25pYXZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDM3MTA0OTMsImV4cCI6MjAxOTI4NjQ5M30.XZlCbRgYjdeYGXSKnAW92a2Z8WPUg9gklZekEb7cGw4')
-
-  const {error} = await supabase
-      .from('entries')
-      .insert({description: window.navigator.userAgent})
-
-  console.log(error)
+//   const supabase = createClient('https://rnjkkkkpedpjhgoniavk.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuamtra2twZWRwamhnb25pYXZrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDM3MTA0OTMsImV4cCI6MjAxOTI4NjQ5M30.XZlCbRgYjdeYGXSKnAW92a2Z8WPUg9gklZekEb7cGw4')
+//
+//   const {error} = await supabase
+//       .from('entries')
+//       .insert({description: window.navigator.userAgent})
+//
+//   console.log(error)
 }
 
 
