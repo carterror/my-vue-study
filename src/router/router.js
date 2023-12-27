@@ -8,7 +8,8 @@ import Nasa from "../views/Nasa.vue";
 const routes = [
     { path: '/', component: HelloWorld },
     { path: '/about', component: About },
-    { path: '/nasa', component: Nasa },
+    { path: '/nasa', redirect: '/nasa1' },
+    { path: '/nasa1', component: Nasa },
     { path: '/category', component: Category },
 ]
 
