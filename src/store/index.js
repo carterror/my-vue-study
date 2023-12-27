@@ -13,5 +13,6 @@ export default createStore({
         category,
         transaction
     },
+    strict: debug ? [createLogger()] : [],
     plugins: debug ? [createLogger()] : []
 })
