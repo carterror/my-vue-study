@@ -26,7 +26,7 @@ const setActiveTab = (tab) => {
 
     onMounted(() => {
       start()
-      store.dispatch('category/addCategory', {title: new Date(), description: window.navigator.userAgent, gasto: true})
+      store.dispatch('category/addCategory', {title: new Date(), description: '', gasto: true})
     })
 
 </script>
