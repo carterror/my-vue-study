@@ -4,10 +4,10 @@ import mutations from './transaction.mutations.js'
 
 const state = () => {
     return {
-        categories: [],
+        all: [],
         error: false,
         message: '',
-        category: null,
+        transaction: null,
         loading: false
     }
 }

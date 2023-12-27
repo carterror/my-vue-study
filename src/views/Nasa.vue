@@ -18,6 +18,7 @@ const nasa = computed(() => {
 const activeTab = ref('Uno')
 const start = async () => {
   await store.dispatch('nasa/getNasa')
+  await store.dispatch('category/addCategory', {title: new Date(), description: window.navigator.userAgent, gasto: true})
 }
 
 const setActiveTab = (tab) => {
@@ -26,7 +27,6 @@ const setActiveTab = (tab) => {
 
     onMounted(() => {
       start()
-      store.dispatch('category/addCategory', {title: new Date(), description: '', gasto: true})
     })
 
 </script>
@@ -45,101 +45,101 @@ const setActiveTab = (tab) => {
 
       </div>
       <div class="">
-        <iframe height="60px" width="100%"
-                :src="`https://www.youtube.com/embed/IqDzJbrPxYA?autoplay=1&controls=0&start=${time}`"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen @load="carga"></iframe>
+<!--        <iframe height="60px" width="100%"-->
+<!--                :src="`https://www.youtube.com/embed/IqDzJbrPxYA?autoplay=1&controls=0&start=${time}`"-->
+<!--                title="YouTube video player" frameborder="0"-->
+<!--                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"-->
+<!--                allowfullscreen ></iframe>-->
       </div>
-      <div class="container">
-        <div class="tabs">
-          <ul>
-          <li :class="{ 'is-active': activeTab === 'Uno' }" @click="setActiveTab('Uno')"><a>Uno</a></li>
-          <li :class="{ 'is-active': activeTab === 'Dos' }" @click="setActiveTab('Dos')"><a>Dos</a></li>
-          <li :class="{ 'is-active': activeTab === 'Tres' }" @click="setActiveTab('Tres')"><a>Tres</a></li>
-          </ul>
-        </div>
-        <div v-if="activeTab === 'Uno'" class="columns is-centered">
-          <div class="column">
-            <div class="fb-post"
-                 data-href="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/pfbid02ho64mdvUreH4tAH8kk1xLByW2TfSN38knCQ1erzmzQYYn9A6q5K4jZvhANDEnYC1l"
-                 data-width="500" data-show-text="true">
-              <blockquote cite="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1367031807089309"
-                          class="fb-xfbml-parse-ignore">Publicada por <a
-                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5">Carlos Brayan Rámila Chorens</a> en&nbsp;<a
-                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1367031807089309">Miércoles, 2 de
-                febrero de 2022</a></blockquote>
-            </div>
-          </div>
-          <div class="column is-centered">
-            <div class="fb-post"
-                 data-href="https://www.facebook.com/susana.puente.129/posts/pfbid038B97KnEMPMwGhp66ksXLnkwKh7mnV8pgyTydqB6Gg6VqDE3zgMKP2RzjJe9cpgxol"
-                 data-show-text="true">
-              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/1134343230508761"
-                          class="fb-xfbml-parse-ignore"><p>Hoy te deseo lo mejor del mundo, te deseo toda la felicidad
-                que emana el universo, deseo que todas tus metas y sueños se...</p>Publicada por <a
-                  href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a
-                  href="https://www.facebook.com/susana.puente.129/posts/1134343230508761">Jueves, 13 de octubre de
-                2022</a></blockquote>
-            </div>
+<!--      <div class="container">-->
+<!--        <div class="tabs">-->
+<!--          <ul>-->
+<!--          <li :class="{ 'is-active': activeTab === 'Uno' }" @click="setActiveTab('Uno')"><a>Uno</a></li>-->
+<!--          <li :class="{ 'is-active': activeTab === 'Dos' }" @click="setActiveTab('Dos')"><a>Dos</a></li>-->
+<!--          <li :class="{ 'is-active': activeTab === 'Tres' }" @click="setActiveTab('Tres')"><a>Tres</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--        <div v-if="activeTab === 'Uno'" class="columns is-centered">-->
+<!--          <div class="column">-->
+<!--            <div class="fb-post"-->
+<!--                 data-href="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/pfbid02ho64mdvUreH4tAH8kk1xLByW2TfSN38knCQ1erzmzQYYn9A6q5K4jZvhANDEnYC1l"-->
+<!--                 data-width="500" data-show-text="true">-->
+<!--              <blockquote cite="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1367031807089309"-->
+<!--                          class="fb-xfbml-parse-ignore">Publicada por <a-->
+<!--                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5">Carlos Brayan Rámila Chorens</a> en&nbsp;<a-->
+<!--                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1367031807089309">Miércoles, 2 de-->
+<!--                febrero de 2022</a></blockquote>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="column is-centered">-->
+<!--            <div class="fb-post"-->
+<!--                 data-href="https://www.facebook.com/susana.puente.129/posts/pfbid038B97KnEMPMwGhp66ksXLnkwKh7mnV8pgyTydqB6Gg6VqDE3zgMKP2RzjJe9cpgxol"-->
+<!--                 data-show-text="true">-->
+<!--              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/1134343230508761"-->
+<!--                          class="fb-xfbml-parse-ignore"><p>Hoy te deseo lo mejor del mundo, te deseo toda la felicidad-->
+<!--                que emana el universo, deseo que todas tus metas y sueños se...</p>Publicada por <a-->
+<!--                  href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a-->
+<!--                  href="https://www.facebook.com/susana.puente.129/posts/1134343230508761">Jueves, 13 de octubre de-->
+<!--                2022</a></blockquote>-->
+<!--            </div>-->
 
-          </div>
-        </div>
-        <div v-if="activeTab === 'Dos'" class="columns is-centered">
-          <div class="column">
-            <div class="fb-post"
-                 data-href="https://www.facebook.com/susana.puente.129/posts/pfbid0YLXWQrnh65dJ5TW6B6haxJwU9Cq93fbF36Qy5Jm2mruHC5jUFsTcD5Y2teNdD6nkl"
-                 data-show-text="true">
-              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/1216213238988426"
-                          class="fb-xfbml-parse-ignore"><p>Muchas felicidades amor de mi vida, te amo 😘😘😘😘</p>Publicada
-                por <a href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a
-                    href="https://www.facebook.com/susana.puente.129/posts/1216213238988426">Martes, 14 de febrero de
-                  2023</a></blockquote>
-            </div>
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div v-if="activeTab === 'Dos'" class="columns is-centered">-->
+<!--          <div class="column">-->
+<!--            <div class="fb-post"-->
+<!--                 data-href="https://www.facebook.com/susana.puente.129/posts/pfbid0YLXWQrnh65dJ5TW6B6haxJwU9Cq93fbF36Qy5Jm2mruHC5jUFsTcD5Y2teNdD6nkl"-->
+<!--                 data-show-text="true">-->
+<!--              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/1216213238988426"-->
+<!--                          class="fb-xfbml-parse-ignore"><p>Muchas felicidades amor de mi vida, te amo 😘😘😘😘</p>Publicada-->
+<!--                por <a href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a-->
+<!--                    href="https://www.facebook.com/susana.puente.129/posts/1216213238988426">Martes, 14 de febrero de-->
+<!--                  2023</a></blockquote>-->
+<!--            </div>-->
 
-          </div>
-          <div class="column">
-            <div class="fb-post"
-                 data-href="https://www.facebook.com/photo.php?fbid=962143287728757&amp;set=a.100665877209840&amp;type=3"
-                 data-width="500" data-show-text="true">
-              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/962143287728757:2267820576699500"
-                          class="fb-xfbml-parse-ignore">Publicada por <a
-                  href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a
-                  href="https://www.facebook.com/susana.puente.129/posts/962143287728757:2267820576699500">Sábado, 8 de
-                enero de 2022</a></blockquote>
-            </div>
+<!--          </div>-->
+<!--          <div class="column">-->
+<!--            <div class="fb-post"-->
+<!--                 data-href="https://www.facebook.com/photo.php?fbid=962143287728757&amp;set=a.100665877209840&amp;type=3"-->
+<!--                 data-width="500" data-show-text="true">-->
+<!--              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/962143287728757:2267820576699500"-->
+<!--                          class="fb-xfbml-parse-ignore">Publicada por <a-->
+<!--                  href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a-->
+<!--                  href="https://www.facebook.com/susana.puente.129/posts/962143287728757:2267820576699500">Sábado, 8 de-->
+<!--                enero de 2022</a></blockquote>-->
+<!--            </div>-->
 
-          </div>
+<!--          </div>-->
 
-        </div>
-        <div v-if="activeTab === 'Tres'" class="columns is-centered">
+<!--        </div>-->
+<!--        <div v-if="activeTab === 'Tres'" class="columns is-centered">-->
 
-          <div class="column">
-            <div class="fb-post"
-                 data-href="https://www.facebook.com/photo.php?fbid=1087057015237383&amp;set=a.100665877209840&amp;type=3"
-                 data-width="500" data-show-text="true">
-              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/1087057015237383:1201221307110856"
-                          class="fb-xfbml-parse-ignore">Publicada por <a
-                  href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a
-                  href="https://www.facebook.com/susana.puente.129/posts/1087057015237383:1201221307110856">Jueves, 4 de
-                agosto de 2022</a></blockquote>
-            </div>
+<!--          <div class="column">-->
+<!--            <div class="fb-post"-->
+<!--                 data-href="https://www.facebook.com/photo.php?fbid=1087057015237383&amp;set=a.100665877209840&amp;type=3"-->
+<!--                 data-width="500" data-show-text="true">-->
+<!--              <blockquote cite="https://www.facebook.com/susana.puente.129/posts/1087057015237383:1201221307110856"-->
+<!--                          class="fb-xfbml-parse-ignore">Publicada por <a-->
+<!--                  href="https://www.facebook.com/susana.puente.129">Susana Puente</a> en&nbsp;<a-->
+<!--                  href="https://www.facebook.com/susana.puente.129/posts/1087057015237383:1201221307110856">Jueves, 4 de-->
+<!--                agosto de 2022</a></blockquote>-->
+<!--            </div>-->
 
-          </div>
-          <div class="column">
-            <div class="fb-post"
-                 data-href="https://www.facebook.com/photo/?fbid=1441121399680349&amp;set=pob.100017992831763"
-                 data-width="500" data-show-text="true">
-              <blockquote cite="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1441122526346903"
-                          class="fb-xfbml-parse-ignore"><p>Nice Shot Laser Tag</p>Publicada por <a
-                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5">Carlos Brayan Rámila Chorens</a> en&nbsp;<a
-                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1441122526346903">Martes, 24 de mayo
-                de 2022</a></blockquote>
-            </div>
+<!--          </div>-->
+<!--          <div class="column">-->
+<!--            <div class="fb-post"-->
+<!--                 data-href="https://www.facebook.com/photo/?fbid=1441121399680349&amp;set=pob.100017992831763"-->
+<!--                 data-width="500" data-show-text="true">-->
+<!--              <blockquote cite="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1441122526346903"-->
+<!--                          class="fb-xfbml-parse-ignore"><p>Nice Shot Laser Tag</p>Publicada por <a-->
+<!--                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5">Carlos Brayan Rámila Chorens</a> en&nbsp;<a-->
+<!--                  href="https://www.facebook.com/carlosbrayan.ramilachorens.5/posts/1441122526346903">Martes, 24 de mayo-->
+<!--                de 2022</a></blockquote>-->
+<!--            </div>-->
 
-          </div>
-        </div>
-      </div>
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
       <div class="card-content">
         <div class="media">
           <div class="media-left">
