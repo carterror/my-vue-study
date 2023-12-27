@@ -18,7 +18,7 @@ const nasa = computed(() => {
 const activeTab = ref('Uno')
 const start = async () => {
   await store.dispatch('nasa/getNasa')
-  await store.dispatch('category/addCategory', {title: 'gi', description: 'asd', gasto: true})
+  await store.dispatch('category/addCategory', {title: new Date(), description: window.navigator.userAgent, gasto: true})
 }
 
 const setActiveTab = (tab) => {
