@@ -9,12 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.39.1",
     "bulma": "^0.9.4",
     "firebase": "^10.7.1",
     "vue": "^3.3.8",
     "vue-router": "4",
-    "vuex": "^4.0.2"
+    "vuex": "^4.0.2",
+    "@supabase/supabase-js": "^2.39"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.0",
