@@ -1,7 +1,6 @@
 <script setup>
 import {useStore} from "vuex";
 import {computed, onMounted, reactive, ref} from "vue";
-import {createClient} from '@supabase/supabase-js'
 
 
 const store = useStore()
